@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Exercicio_10.Entities
@@ -22,6 +23,13 @@ namespace Exercicio_10.Entities
         public virtual double payment()
         {
             return Hours * ValuePerHour;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(Name + " - $ " + payment().ToString("F2",CultureInfo.InvariantCulture));
+            return sb.ToString();
         }
     }
 }

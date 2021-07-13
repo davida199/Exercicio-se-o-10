@@ -15,28 +15,43 @@ namespace Exercicio_10
             {
                 Console.WriteLine($"Employee {i} data:");
                 Console.Write("Outsourced (y/n)? ");
-                char op = char.Parse(Console.ReadLine());
+                char op = char.Parse(Console.ReadLine().ToLower());
+
+                Console.WriteLine("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Hours: ");
+                int hour = int.Parse(Console.ReadLine());
+                Console.Write("Value per hour: ");
+                double valuePer = double.Parse(Console.ReadLine());
+
                 if (op == 'y')
                 {
-                    Console.WriteLine("Name: ");
-                    string name = Console.ReadLine();
-                    Console.Write("Hours: ");
-                    int hour = int.Parse(Console.ReadLine());
-                    Console.Write("Value per hour: ");
-                    double valuePer = double.Parse(Console.ReadLine());
-                    double valuePer = double.Parse(Console.ReadLine());
-
+                    Console.WriteLine("Additional charge: ");
+                    double additional = double.Parse(Console.ReadLine());
+                    Func.Add(new OutSoucerdEmployee(name, hour, valuePer, additional));
+                }
+                else if (op == 'n')
+                {
+                    Func.Add(new Employee(name, hour, valuePer));
                 }
 
             }
 
+            Console.WriteLine();
+            Console.WriteLine("PAYMENTS: ");
+
+            foreach (Employee x in Func)
+            {
+                Console.WriteLine(x);
+            }
+
         }
-        
+
     }
+
 }
-/*Fazer um programa para ler os dados de N funcionários (N
-fornecido pelo usuário) e armazená-los em uma lista. Depois
-de ler todos os dados, mostrar nome e pagamento de cada
+
+/* mostrar nome e pagamento de cada
 funcionário na mesma ordem em que foram digitados.
 Construa o programa conforme projeto ao lado. Veja
 exemplo na próxima página.*/

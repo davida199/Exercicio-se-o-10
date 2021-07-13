@@ -15,14 +15,7 @@ namespace Exercicio_10.Entities
         }
         public sealed override double payment()
         {
-            
             return base.payment()+1.1*AdditionalCharge;
         }
     }
 }
-/*Fazer um programa para ler os dados de N funcionários (N
-fornecido pelo usuário) e armazená-los em uma lista. Depois
-de ler todos os dados, mostrar nome e pagamento de cada
-funcionário na mesma ordem em que foram digitados.
-Construa o programa conforme projeto ao lado. Veja
-exemplo na próxima página.*/
